@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style type="text/css">
+  h1{
+    background: lightblue;
+    margin: 0;
+    font-size: 50px;
+  }
+  sup,.error{
+    color: red;
+  }
+  label{
+    display: inline-block;
+    width: 190px;
+
+  }
+  form{
+    text-align: center;
+    border: 0px ridge black;
+    margin-top: 10px;
+    padding: 50px 50px 50px 50px ;
+  }
+  input[type="text"],input[type="password"]
+  {
+    width: 20%;
+    height: 30px;
+        border-radius: 13px;
+
+  }
+  .registerbtn{
+   width: 10%;
+   height: 30px;
+    border-radius: 15px;
+    color: white;
+    background: blue;
+   margin-left: 185px;
+  }
+  textarea{
+    width: 20%;
+    height: 80px;
+    border-radius: 13px;
+    border: 1px ridge black;
+  }
+
+</style>
+
+</head>
+<body bgcolor="lightblue">
+<form action="customerlog.php" method="POST" onsubmit="return validation()">
+
+  <center><h1>REGISTRATION FORM</h1> </center>
+  <hr>
+  <label for="username"><b>USERNAME<sup>*</sup> :</b></label>  
+<input type="text" name="uname" id="uname" placeholder="Enter Your Username" >
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="error" id="unameErr"></span>
+<br>
+<br>
+  <label><b>CUSTOMER NAME<sup>*</sup> :</b></label> 
+  <input type="text" name="name" id="cname" size="15" placeholder="Enter Your Customer Name"><br>
+  &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="error" id="cnameErr"></span>
+  <br><br>
+<label> 
+<b>MOBILE NUMBER<sup>*</sup> :</b>
+</label>
+<input type="text" name="mobileno" placeholder="Enter Your Mobile Number" id="mobileno"> <br>
+ &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="error" id="mobilenoErr"></span>
+<br><br>
+<b><label>ADDRESS :</label> </b>
+<input type="text" name="address" placeholder="Enter Your Current Address" >
+<br>
+
+<br>
+<br>
+
+    <label for="password"><b>PASSWORD<sup>*</sup> :</b></label>  
+<input type="password" name="password" placeholder="Enter Your Password" id="pass"><br><br><br>
+ &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;<span class="error" id="passErr"></span>
+  
+  
+    <input type="submit" class="registerbtn" value="REGISTER">    
+</form>  
+
+<script type="text/javascript">
+   function validation(){
+    var uname=document.getElementById('uname').value;
+
+      var cname=document.getElementById('cname').value;
+      var pass=document.getElementById('pass').value;
+      var mobileno=document.getElementById('mobileno').value;
+      
+      if(uname == ""){
+        document.getElementById("unameErr").innerHTML="please enter your name";
+        return false;
+     }
+
+      if(cname == ""){
+         document.getElementById("cnameErr").innerHTML="please enter your name";
+         return false;
+      }
+         
+
+          if(mobileno == ""){
+            document.getElementById("mobilenoErr").innerHTML="please enter your mobileno";
+            return false;
+         }
+         if(mobileno.length!=10){
+            document.getElementById("mobilenoErr").innerHTML="please enter your 10 digit mobileno";
+            return false;
+         }
+        if(pass.length<6){
+            document.getElementById("passErr").innerHTML="please enter 6 characters";
+            return false;
+            }
+
+
+          if(emailid == ""){
+            document.getElementById("emailidErr").innerHTML="please enter your emailid";
+            return false;
+         }
+         if(emailid.indexOf('@') <= 0){
+            document.getElementById("emailidErr").innerHTML="@ invalid position";
+            return false;
+         }
+
+          if(emailid.charAt(emailid.length -4)!='.'){
+            document.getElementById("emailidErr").innerHTML=" . invalid position";
+            return false;
+         }
+
+
+
+   }
+
+
+
+</script>
+</body>  
+</html>  

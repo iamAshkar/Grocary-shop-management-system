@@ -1,0 +1,13 @@
+create table login(uname varchar(20) PRIMARY KEY,password varchar(20),type varchar(20));
+
+create table register(uname varchar(20),name varchar(20), mobileno varchar(20), address varchar(20), password varchar(20));
+
+create table inventory(pid int PRIMARY KEY AUTO_INCREMENT,pname varchar(20),price varchar(20),quantity varchar(20),type varchar(10),image image);
+
+create table bill (uname varchar(20) references login (uname),pid int,pname varchar(20),price int,quantity int,amount int,constraint fk1 foreign key(pid) references inventory(pid));
+
+create table feedback(uname varchar(60),feedback varchar(60),rating varchar(60),date varchar(60));
+
+create table sale(uname varchar(20) references login (uname),pid int ,pname varchar(20),price int,quantity int,amount int,date date,constraint fk2 foreign key(pid) references inventory(pid));
+
+insert into login values('admin','admin','admin');

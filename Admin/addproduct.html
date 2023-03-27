@@ -1,0 +1,35 @@
+<html>
+<head>
+<style>
+label{
+display:inline-block;
+width:200px;
+
+}
+</style>
+</head>
+<body bgcolor="black" text="white">
+<center>
+<h1> <u> INVENTORY </u> </h1>
+<form method="POST" action="addproduct.php" enctype="multipart/form-data">
+ <!--<label>PRODUCT ID:</label><input type="text" name="pid"> <br>   -->
+<label>PNAME:</label><input type="text" name="pname"required> <br> <br> 
+<label>PRICE:</label><input type="text" name="price" pattern="[0-9]*[.]?[0-9]+">kg <br> <br> 
+<label>QUANTITY:</label><input type="text" name="quantity" pattern="[0-9]*[.]?[0-9]+">kg <br> <br>
+<label>Image:</label><input type="file" name="image" accept="image/png, image/jpg, image/jpeg" required> <br> <br>
+<label><select name="dropdown"></label> <br> <br><br>
+ <br>   
+<option value="vegetables" selected> vegetables</option>
+<option value="fruits" selected> fruits </option>
+<option value="drinks" selected> Drinks </option>
+</select>
+<br><br>
+<input type="submit" value="ADD"> <br> <br> <br>
+<input type="reset" value="RESET"> <br> <br>
+</form>
+<form action="admin.php">
+<input type="submit" value="<<back"> <br>
+</form>
+</center>
+</body>
+</html>
